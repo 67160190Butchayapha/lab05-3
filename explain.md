@@ -1,68 +1,136 @@
-# Week 5: JavaScript Fundamentals - Lab Summary
-## 📊📊 ปฏิบัติการที่สําเร็จ
-### Activity 1: Variables & Data Types ✅
-- ใช ้`const` และ `let` อย่างถูกต้อง
-- Primitive types: number, string, boolean, null, undefined
-- Object types: array, object, function
-- Type coercion: implicit vs explicit
-**Key file:** `01-variables.js`
-### Activity 2: Functions & Arrow Functions ✅
-- Function declarations, expressions, arrow functions
-- Default parameters
-- Rest parameters (...args)
-- Destructuring parameters
-- Callbacks
-**Key file:** `02-functions.js`
-### Activity 3: Control Flow & Logic ✅
-- if/else statements
-- switch statements
-- Ternary operators
-- Logical operators (&&, ||, !)
-- Form validation
-**Key file:** `03-control-flow.js`
-### Activity 4: Loops & Array Methods ✅
-- for, while, for...of, for...in loops
-- forEach, map, filter, reduce
-- Method chaining
-- Student analysis example
-**Key file:** `04-loops.js`
-### Activity 5: Integration Project ✅
-- Quiz application combining all concepts
-- Data processing
-- Results calculation
-- Statistics generation
-**Key file:** `05-integration.js`
+# 📘 อธิบายการทำงานของโค้ด  
+## Week 5: JavaScript Fundamentals
+
+ไฟล์นี้อธิบายการทำงานของโค้ด JavaScript ในแต่ละ Activity  
+พร้อมตัวอย่าง **ผลลัพธ์ (Output)** และ **คำอธิบายว่าโค้ดแสดงผลลัพธ์ออกมาได้อย่างไร**
+
 ---
-## 🎯🎯 Learning Outcomes
-### Variables & Scoping
-✅ Use `const` by default
-✅ Use `let` when value changes
-✅ Avoid `var`
-✅ Understand block scope
-### Data Types
-✅ Primitive: number, string, boolean, null, undefined
-✅ Objects: array, object, function, date
-✅ Type checking with `typeof`
-✅ Type coercion (implicit & explicit)
-### Functions
-✅ Declaration, expression, arrow syntax
-✅ Parameters: default, rest, destructuring
-✅ Return values
-✅ Callbacks & higher-order functions
-✅ Scope & closure
-### Control Flow
-✅ Conditional: if/else, switch, ternary
-✅ Logical operators: &&, ||, !
-✅ Short-circuit evaluation
-### Loops & Iteration
-✅ Traditional loops: for, while
-✅ Iteration: for...of, for...in
-✅ Array methods: forEach, map, filter, reduce
-✅ Method chaining
----
-## 📁📁 Files Created
-01-variables.js - Variables and data types
-02-functions.js - Functions and arrow functions
-03-control-flow.js - Control flow and logic
-04-loops.js - Loops and array methods
-05-integration.js - Quiz application README.md - Summary (this file)
+
+## 2.1 `01-variables.js`  
+### 6. Challenge: Create a Person Object
+
+### 🔹 ตัวอย่างผลลัพธ์
+```text
+Student object:
+{ firstName: 'Alice', lastName: 'Smith', age: 20, gpa: 3.8, ... }
+Full name: Alice Smith
+Info: Alice Smith, Age: 20, GPA: 3.8
+Courses: HTML, CSS, JavaScript
+```
+### 🔹 อธิบายการทำงาน
+```text
+- สร้าง object ชื่อ student เพื่อเก็บข้อมูลนักเรียน
+- ภายใน object ประกอบด้วย
+  - properties เช่น firstName, age, courses
+  - methods เช่น getFullName(), getInfo()
+- ใช้ this เพื่ออ้างอิงข้อมูลภายใน object เดียวกัน
+- courses.join(", ") ใช้แปลง array ให้เป็น string เพื่อแสดงผล
+📌 สรุป
+โค้ดนี้แสดงการใช้งาน Object, Method และ this keyword
+```
+## 2.2 `02-functions.js`  
+### 8. Returning Objects
+### 🔹 ตัวอย่างผลลัพธ์
+```text
+Email: john.doe@example.com
+Full name: John Doe
+```
+### 🔹 อธิบายการทำงาน
+```text
+- ฟังก์ชัน createUser() คืนค่าเป็น object
+- ใช้ shorthand property เช่น firstName
+- สร้าง method ภายใน object (getFullName)
+- ใช้ this เพื่อเข้าถึงข้อมูลภายใน object
+```
+### 9. Function as Parameter (Callback)
+### 🔹 ตัวอย่างผลลัพธ์
+```text
+Original: [1, 2, 3, 4, 5]
+Doubled: [2, 4, 6, 8, 10]
+Squared: [1, 4, 9, 16, 25]
+```
+### 🔹 อธิบายการทำงาน
+```text
+- ฟังก์ชัน processArray() รับค่า array และ callback function
+- callback จะถูกเรียกใช้กับสมาชิกทุกตัวใน array
+- แสดงแนวคิด Higher-order Function
+📌 สรุป
+ฟังก์ชันใน JavaScript สามารถรับฟังก์ชันอื่นเป็นพารามิเตอร์ได้
+```
+## 2.3 `03-control-flow.js` 
+### 5. Short-Circuit Evaluation
+### 🔹 ตัวอย่างผลลัพธ์
+```text
+Copy code
+User name: John
+User profile: undefined
+```
+### 🔹 อธิบายการทำงาน
+```text
+- ใช้ || เพื่อเลือกค่าที่เป็นจริงตัวแรก
+- ใช้ ?. (Optional Chaining) เพื่อป้องกัน error
+- JavaScript จะหยุดการประเมินทันทีเมื่อรู้ผลลัพธ์แล้ว
+```
+### 7. Form Validation
+### 🔹 ตัวอย่างผลลัพธ์
+```text
+Valid user: { isValid: true, errors: [] }
+Invalid user: { isValid: false, errors: [...] }
+```
+### 🔹 อธิบายการทำงาน
+```text
+Copy code
+- ตรวจสอบข้อมูลทีละเงื่อนไขด้วย if
+- เก็บข้อความ error ลงใน array
+- คืนค่าเป็น object { isValid, errors }
+📌 สรุป
+ใช้แนวคิดเดียวกับระบบตรวจสอบฟอร์มในเว็บไซต์จริง
+```
+## 2.4 `04-loops.js` 
+### 9. Chaining Methods
+### 🔹 ตัวอย่างผลลัพธ์
+```text
+Even numbers squared: 2²=4, 4²=16, 6²=36, 8²=64, 10²=100
+```
+### 🔹 อธิบายการทำงาน
+```text
+- ใช้ .filter() → .map() → .join()
+- ทำงานต่อเนื่องจากซ้ายไปขวา
+- ช่วยให้โค้ดสั้น อ่านง่าย และเข้าใจลำดับการทำงานชัดเจน
+```
+### 10. Challenge: Student Grades
+### 🔹 ตัวอย่างผลลัพธ์
+```text
+Names: Alice, Bob, Charlie, Diana, Eve
+Class average: 87.00
+Top scorer: Alice (95)
+```
+### 🔹 อธิบายการทำงาน
+```text
+- map() ดึงชื่อของนักเรียน
+- filter() คัดเลือกนักเรียนที่ได้คะแนนสูง
+- reduce() ใช้หาค่าเฉลี่ยและคะแนนสูงสุด
+- sort() เรียงลำดับคะแนนจากมากไปน้อย
+📌 สรุป
+ใช้ Array Methods แทนการเขียน loop หลายรอบ
+```
+## 2.4 `05-integration.js` 
+### Quiz Application
+### 🔹 ตัวอย่างผลลัพธ์
+```text
+Copy code
+FINAL SCORE: 3/5 (60.0%)
+GRADE: D
+```
+### 🔹 อธิบายการทำงาน
+```text
+- ใช้ array quizzes เก็บคำถามและตัวเลือก
+- ใช้ forEach() จำลองการตอบคำถาม
+- เก็บผลลัพธ์ไว้ใน array results
+- ใช้ filter() เพื่อนับจำนวนข้อที่ตอบถูก
+- คำนวณคะแนนและเกรดด้วย if/else
+- ใช้ reduce() เพื่อสรุปสถิติ
+📌 สรุป
+เป็นการบูรณาการความรู้ทั้งหมด ได้แก่
+variables, functions, control flow, loops และ array methods
+```
